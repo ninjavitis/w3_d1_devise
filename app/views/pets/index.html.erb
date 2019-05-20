@@ -1,5 +1,6 @@
-<%= button_to "Log Out", destroy_user_session_path,	method: :delete %>
+<%= button_to "Log Out", destroy_user_session_path,	method: :delete, class:"btn grey" %>
 <br />
+
 <h2>Welcome <%= current_user.first_name %></h2>
 
 <hr />
@@ -7,9 +8,10 @@
 
 <h3>Your Pets</h3>
 <ul>
-<% @pets.each do |p| %>
-
-<li>
-<%= p.name%> - <%= p.animal %>
-</li>
-<% end %>
+  <% @pets.each do |p| %>
+    <li>
+      <%= p.name %> - <%= p.animal %>
+      <%= link_to "Destroy Your Pet", p, method: :delete, class:"btn red"%>
+    </li>
+  <% end %>
+</ul>

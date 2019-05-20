@@ -1,2 +1,14 @@
 <h1>Pets#new</h1>
-<p>Find me in app/views/pets/new.html.erb</p>
+<br />
+
+<%= form_with(model: @pet, local:true) do |f| %>
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name, autofocus:true, required:true, placeholder: "Mister Meowington"%>
+</>
+<div class="field">
+  <%= f.label :animal %>
+  <%= f.text_field :animal, required:true, placeholder: "Cat, Dog, etc..."%>
+</>
+<%= f.submit "Save Your Pet!", class:"btn green accent-3" %>
+<%end%>
